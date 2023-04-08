@@ -1,0 +1,15 @@
+---
+- name: Write in file
+  hosts: localhost
+  tasks:
+    - name: Write 1st line
+      lineinfile:
+        path: /tmp/file.txt
+        state: present
+        line: This is line 1
+        create: yes
+    - name: Write 2nd line
+      lineinfile:
+        path: /tmp/file.txt
+        state: present
+        line: This is line 2
