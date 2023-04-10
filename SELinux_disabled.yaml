@@ -1,0 +1,7 @@
+---
+- name: Disable config for SELinux
+  hosts: localhost
+  tasks:
+    - name: Disable SELinux
+      selinux:
+        state: disabled
