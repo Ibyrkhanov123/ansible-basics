@@ -4,4 +4,5 @@
   tasks:
     - name: Disable SELinux
       selinux:
+        policy: targeted
         state: disabled
