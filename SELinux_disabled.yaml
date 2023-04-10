@@ -1,8 +1,10 @@
 ---
-- name: Disable config for SELinux
+- name: disable config for SELinux and Reboot system
   hosts: localhost
   tasks:
-    - name: Disable SELinux
+    - name: disable SELinux
       selinux:
         policy: targeted
         state: disabled
+    - name: Reboot system
+      command: reboot
