@@ -1,9 +1,11 @@
 ---
-- name: disable config for SELinux and Reboot system
-  hosts: localhost
-  tasks:
-    - name: disable SELinux
-      selinux:
-        state: disabled
-    - name: Reboot system
-      command: reboot
+  - name: Changing the configuration for SELinux file and Reboot system
+    hosts: localhost
+    tasks:
+      - name: Disable SELinux
+        lineinfile:
+          path: /etc/selinux/config
+          search_string: 'SELINUX=enforcing'
+          line: SELINUX=disabled
+      - name: Reboot the
+        command: reboot
