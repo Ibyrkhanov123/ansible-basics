@@ -5,7 +5,7 @@
       - name: Disable SELinux
         lineinfile:
           path: /etc/selinux/config
-          search_string: 'SELINUX=enforcing'
+          regexp: '^SELINUX='
           line: SELINUX=disabled
       - name: Reboot the
         command: reboot
