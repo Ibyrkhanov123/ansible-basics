@@ -4,7 +4,6 @@
   tasks:
     - name: disable SELinux
       selinux:
-        policy: targeted
         state: disabled
     - name: Reboot system
       command: reboot
