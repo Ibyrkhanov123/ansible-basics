@@ -1,0 +1,9 @@
+---
+- name: Check and print OS facts of host1
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Print Facts
+      debug:
+        var: ansible_distribution
+      
